@@ -1,0 +1,40 @@
+# Usar VirtualBox por defecto para este proyecto.
+ENV["VAGRANT_DEFAULT_PROVIDER"] = "virtualbox"
+
+# PowerShell, desde esta carpeta:
+#   $env:ESCENARIO = "A"; vagrant up  (dos VM)
+#   $env:ESCENARIO = "B"; vagrant up client  (VM y host)
+# Si se uso A antes de B: seleccionar A y ejecutar vagrant halt server primero.
+# Luego: vagrant ssh server / vagrant ssh client, cada uno en su terminal.
+escenario = ENV.fetch("ESCENARIO", "A")
+raise "ESCENARIO debe ser A o B" unless ["A", "B"].include?(escenario)
+
+maquinas = { "client" => "192.168.56.21" }
+maquinas = { "server" => "192.168.56.20" }.merge(maquinas) if escenario == "A"
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "alvistack/ubuntu-24.04"
+  # Los scripts y resultados son accesibles desde Windows y desde las VM.
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  config.vm.synced_folder "./experiments", "/experiments-src",
+    type: "virtualbox", mount_options: ["ro"]
+
+  # Preparar las herramientas; los experimentos se inician manualmente.
+  config.vm.provision "shell", inline: <<-SHELL
+    set -e
+    apt-get update
+    apt-get install -y --no-install-recommends build-essential netcat-openbsd
+  SHELL
+
+  maquinas.each do |nombre, ip|
+    config.vm.define nombre do |vm|
+      vm.vm.hostname = "#{nombre}-tp2"
+      vm.vm.network "private_network", ip: ip
+      vm.vm.provider "virtualbox" do |vb|
+        vb.name = "vm-#{nombre}-tp2"
+        vb.memory = 1024
+        vb.cpus = 1
+      end
+    end
+  end
+end
