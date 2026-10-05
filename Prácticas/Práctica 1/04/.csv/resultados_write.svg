@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,sans-serif;fill:#202124}.titulo{font-size:24px;font-weight:bold}.eje{font-size:14px}.marca{font-size:12px;fill:#5f6368}.leyenda{font-size:14px;font-weight:bold}</style>
+<text class="titulo" x="500.0" y="36" text-anchor="middle">Tiempo promedio de write()</text>
+<line x1="95" y1="530.00" x2="955" y2="530.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="534.00" text-anchor="end">48.5</text>
+<line x1="95" y1="439.00" x2="955" y2="439.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="443.00" text-anchor="end">156.4</text>
+<line x1="95" y1="348.00" x2="955" y2="348.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="352.00" text-anchor="end">503.8</text>
+<line x1="95" y1="257.00" x2="955" y2="257.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="261.00" text-anchor="end">1,623.2</text>
+<line x1="95" y1="166.00" x2="955" y2="166.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="170.00" text-anchor="end">5,229.8</text>
+<line x1="95" y1="75.00" x2="955" y2="75.00" stroke="#dfe3e8"/>
+<text class="marca" x="83" y="79.00" text-anchor="end">16,849.6</text>
+<line x1="95.00" y1="75" x2="95.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="95.00" y="554" text-anchor="middle">10</text>
+<line x1="267.00" y1="75" x2="267.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="267.00" y="554" text-anchor="middle">100</text>
+<line x1="439.00" y1="75" x2="439.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="439.00" y="554" text-anchor="middle">1,000</text>
+<line x1="611.00" y1="75" x2="611.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="611.00" y="554" text-anchor="middle">10,000</text>
+<line x1="783.00" y1="75" x2="783.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="783.00" y="554" text-anchor="middle">100,000</text>
+<line x1="955.00" y1="75" x2="955.00" y2="530" stroke="#eef0f2"/>
+<text class="marca" x="955.00" y="554" text-anchor="middle">1,000,000</text>
+<line x1="95" y1="75" x2="95" y2="530" stroke="#202124" stroke-width="2"/>
+<line x1="95" y1="530" x2="955" y2="530" stroke="#202124" stroke-width="2"/>
+<text class="eje" x="500.0" y="595" text-anchor="middle">Cantidad de bytes (escala logaritmica)</text>
+<text class="eje" x="24" y="310.0" text-anchor="middle" transform="rotate(-90 24 310.0)">Tiempo promedio en us (escala logaritmica)</text>
+<polyline points="95.00,463.95 267.00,498.62 439.00,434.15 611.00,269.05 783.00,411.67 955.00,106.38" fill="none" stroke="#1565c0" stroke-width="3"/>
+<circle cx="95.00" cy="463.95" r="5" fill="#1565c0"/>
+<circle cx="267.00" cy="498.62" r="5" fill="#1565c0"/>
+<circle cx="439.00" cy="434.15" r="5" fill="#1565c0"/>
+<circle cx="611.00" cy="269.05" r="5" fill="#1565c0"/>
+<circle cx="783.00" cy="411.67" r="5" fill="#1565c0"/>
+<circle cx="955.00" cy="106.38" r="5" fill="#1565c0"/>
+</svg>
